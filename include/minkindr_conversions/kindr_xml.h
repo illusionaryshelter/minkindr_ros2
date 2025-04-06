@@ -1,10 +1,8 @@
-#ifndef MINKINDR_CONVERSIONS_KINDR_XML_H
-#define MINKINDR_CONVERSIONS_KINDR_XML_H
-
-#include <XmlRpcValue.h>
-#include <kindr/minimal/quat-transformation.h>
+#pragma once
 #include <Eigen/Core>
 #include <Eigen/Geometry>
+#include <kindr/minimal/quat-transformation.h>
+#include <xmlrpcpp/XmlRpcValue.h>
 
 #include <glog/logging.h>
 
@@ -14,8 +12,8 @@ namespace minimal {
 // Convert from an xml RPC (from ROS Param server) to a
 // kindr::minimal::QuatTransformation.
 template <typename Scalar>
-void xmlRpcToKindr(XmlRpc::XmlRpcValue& xml_rpc,
-                   kindr::minimal::QuatTransformationTemplate<Scalar>* kindr) {
+void xmlRpcToKindr(XmlRpc::XmlRpcValue &xml_rpc,
+                   kindr::minimal::QuatTransformationTemplate<Scalar> *kindr) {
   typename kindr::minimal::QuatTransformationTemplate<Scalar>::RotationMatrix
       temp_rot_matrix;
   typename kindr::minimal::QuatTransformationTemplate<Scalar>::Position
@@ -52,7 +50,5 @@ void xmlRpcToKindr(XmlRpc::XmlRpcValue& xml_rpc,
                                                               temp_translation);
 }
 
-}  // namespace minimal
-}  // namespace kindr
-
-#endif  // MINKINDR_CONVERSIONS_KINDR_TF_H
+} // namespace minimal
+} // namespace kindr
