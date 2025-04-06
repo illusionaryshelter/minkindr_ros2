@@ -1,2 +1,2 @@
 # minkindr_ros
-ros wrapper for minkindr
+ros2 wrapper for minkindr
